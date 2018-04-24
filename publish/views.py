@@ -1,9 +1,23 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .forms import PublishWordForm
 from django.views.generic import TemplateView
+from publish.models import Post
 from django.utils import timezone
 
+class HomeView(TemplateView):
+    template_name = 'publish/home.html'
+
+    def get(self, request, *args, **kwargs):
+        words = Post.objects.all().order_by('-id')
+        return render(request, self.template_name, {'words': words})
+
+    def Post(self, request):
+        words = Post.objects.all().order_by('-id')
+        return render(request, self.template_name, {'words': words})
+
+
 class PublishView(TemplateView):
+    template_home = 'publish/home.html'
     template_name = 'publish/publish_edit.html'
 
     def get(self, request, *args, **kwargs):
@@ -14,27 +28,6 @@ class PublishView(TemplateView):
         form = PublishWordForm(request.POST)
         if form.is_valid():
             form.save()
-            word = form.cleaned_data['word']
-            description = form.cleaned_data['description']
-            form = PublishWordForm()
-            return render(request, self.template_name, {'form': form})
-
-# def publish_new(request):
-
-    # if request.method == "POST":
-    #     form = PublishWordForm()
-    #     if form.is_valid():
-    #         print("valid")
-    #         # word = form.save(commit=False)
-    #         word = form.save()
-    #         # word.word = "asdsad"
-    #         # word.description = request.description
-    #         # post.author = request.user
-    #         # word.published_date = timezone.now()
-    #         word.save()
-    #     else:
-    #         print("Not valid")
-    # else:
-    #     form = PublishWordForm()
-    #     # print(request.word)
-    # return render(request, 'publish/publish_edit.html', {'form': form})
+            # form = PublishWordForm()
+            return redirect('home')
+        return render(request, self.template_name, {'form': form})

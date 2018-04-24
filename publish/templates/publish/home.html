@@ -1,0 +1,10 @@
+{% extends 'publish/base.html' %}
+
+{% block content %}
+    {% for word in words %}
+        <div>
+            <h3>{{ word.word }}</h3>
+            <p>{{ word.description|linebreaksbr }}</p>
+        </div>
+    {% endfor %}
+{% endblock %}
