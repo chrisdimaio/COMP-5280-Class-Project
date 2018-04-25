@@ -12,4 +12,6 @@ urlpatterns = [
     url(r'^dict_search/$', views.dict_search, name='dict_search'),
     #/add_def
     url(r'^add_def/$', views.add_def, name='add_def'),
+    #/about_us
+    url(r'^about_us/$', views.about_us, name='about_us'),
 ]

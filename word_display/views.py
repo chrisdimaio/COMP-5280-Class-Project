@@ -40,3 +40,6 @@ def add_def(request):
     ud.userDef = u_def
     ud.save()
     return render(request, 'word_display/index.html', {'word_value': word_value})
+
+def about_us(request):
+    return render(request, "word_display/about_us.html")

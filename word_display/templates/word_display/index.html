@@ -1,10 +1,26 @@
-<h1>Search a word in the dictionary</h1>
-<form action="http://127.0.0.1:8000/word_display/dict_search/"  method="post">
-    {% csrf_token %}
-    <input type="text" name="word_value" id="word_value">
-    <input type="submit" value="search">
-</form>
+{% load staticfiles %}
+<html>        
+    <head>
+        <link rel="stylesheet" type="text/css" href="{% static 'index.css' %}"/> 
+    </head>
+    <body >
+        <div = class="div_content">
+            <div class="title">
+                <div class="title_text">
+                    <h1>Hello!</h1> 
+                    <h3>Learn English Fast!</h3> 
+                </div>
+            </div>
+            <div class="search_form">
+                    <form action="http://127.0.0.1:8000/word_display/dict_search/"  method="post">
+                        {% csrf_token %}
+                        <input type="text" name="word_value" id="word_value" >
+                        <br/>
+                        <br/>
+                        <input type="submit" value=" Search Your Keyword  ">
+                    </form>
+                </div>
+        </div>
+    </body>
+</html>
 
-{% if error_message %}
-    <p> <strong> {{ error_message }} </strong></p>
-{% endif %}

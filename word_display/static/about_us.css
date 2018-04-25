@@ -1,0 +1,25 @@
+body{
+  }
+.title{
+    width: 100%;
+    text-align: center;
+}
+
+.mission{
+    border: 1px solid black;
+    width: 50%;
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+    border-radius: 10px;
+    background-color: white;
+}
+.how_to{
+    border: 1px solid black;
+    width: 50%;
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+    border-radius: 10px;
+    background-color: white;
+}
