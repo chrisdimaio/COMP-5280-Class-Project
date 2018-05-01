@@ -1,9 +1,6 @@
-{% load staticfiles %}
-<html>
-    <head>
-        <link rel="stylesheet" type="text/css" href="{% static 'about_us.css' %}"/>
-    </head>
-    <body>
+{% extends 'word_display/base.html' %}
+
+{% block content %}
         <div class="title">
             <h1> About Us </h1>
         </div>
@@ -33,5 +30,4 @@
                 We also encourage you to contribute to our database. You can either enter your own definitions or upvote an user definition. 
             </p>
         </div>
-    </body>
-</html>
+{% endblock %}
