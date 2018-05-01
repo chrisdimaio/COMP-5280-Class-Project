@@ -1,3 +1,6 @@
+{% extends 'word_display/base.html' %}
+
+{% block content %}
 <h1>The word: {{ word_value }}</h1>
 <h3>Dictionary Definition : {{definition}}</h3>
 <h3>User's Definitions: </h3>
@@ -8,9 +11,11 @@
     {% endfor %}
 </ul>
 <h2> Enter your own definition:</h2>
-<form action="http://127.0.0.1:8000/word_display/add_def/" method="post">
+<form action="/word_display/add_def/" method="post">
     {% csrf_token %}
     <input type="text" name="user_def" id="user_def">
     <input type="hidden" value="{{ word_value }}" name="word_value" id="word_value">
     <input type="submit" value="search">
 </form>
+
+{% endblock %}
