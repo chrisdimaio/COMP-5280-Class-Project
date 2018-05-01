@@ -14,4 +14,10 @@ urlpatterns = [
     url(r'^add_def/$', views.add_def, name='add_def'),
     # /about_us
     url(r'^about_us/$', views.about_us, name='about_us'),
+    # /up_vote
+    url(r'^up_vote/$', views.up_vote, name='up_vote'),
+    # /down_vote
+    url(r'^down_vote/$', views.down_vote, name='down_vote'),
+    # /user_def
+    url(r'^user_def/(?P<word_value>[a-z]+)$', views.user_def, name='user_def')
 ]

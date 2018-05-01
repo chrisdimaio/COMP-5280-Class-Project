@@ -1,0 +1,11 @@
+<h2> Enter your own definition:</h2>
+<form action="/word_display/add_def/" method="post">
+    {% csrf_token %}
+    <h3> Word: </h3>
+    <input type="text" name="word_value" id="word_value" value="{{ word_value }}">
+    <br/>
+    <br/>
+    <h3> Your definition: </h3>
+    <input type="text" name="user_def" id="user_def">
+    <input type="submit" value="Add Your Definition">
+</form>

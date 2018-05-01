@@ -1,21 +1,26 @@
-{% extends 'word_display/base.html' %}
-
 {% block content %}
 <h1>The word: {{ word_value }}</h1>
 <h3>Dictionary Definition : {{definition}}</h3>
 <h3>User's Definitions: </h3>
 
-<ul>
-    {% for entry in word_entry.users_def_set.all %}
-        <li> {{ entry.userDef }} </li>
-    {% endfor %}
-</ul>
-<h2> Enter your own definition:</h2>
-<form action="/word_display/add_def/" method="post">
-    {% csrf_token %}
-    <input type="text" name="user_def" id="user_def">
-    <input type="hidden" value="{{ word_value }}" name="word_value" id="word_value">
-    <input type="submit" value="search">
-</form>
+{% for entry in word_entry.users_def_set.all %}
+    <div>
+        {{ entry.userDef }}
+        <form action="/word_display/up_vote/" method="post">
+            {% csrf_token %}
+            <input type="submit" value="Up Vote">
+            <input type="hidden" value="{{ word_value }}" name="word_value" id="word_value">
+            <input type="hidden" value= "{{ entry.pk }}" name="key" id="key">
+        </form>
+        <form action="/word_display/down_vote/" method="post">
+            {% csrf_token %}
+            <input type="submit" value="Down Vote">
+            <input type="hidden" value="{{ word_value }}" name="word_value" id="word_value">
+            <input type="hidden" value= "{{ entry.pk }}" name="key" id="key">
+        </form>
+        {{ entry.def_votes }}
+    </div>
+{% endfor %}
+<a href="/word_display/user_def/{{ word_value }}"> Add Your Own Definition!</a>
 
 {% endblock %}

@@ -11,3 +11,4 @@ class word(models.Model):
 class users_def(models.Model):
     wordEntry = models.ForeignKey(word, on_delete=models.CASCADE)
     userDef = models.CharField(max_length=150)
+    def_votes = models.IntegerField(default=0)
