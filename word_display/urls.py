@@ -1,4 +1,5 @@
-from django.conf.urls import url
+from django.contrib import admin
+from django.conf.urls import url, include
 from . import views
 
 urlpatterns = [
@@ -14,6 +15,12 @@ urlpatterns = [
     url(r'^add_def/$', views.add_def, name='add_def'),
     # /about_us
     url(r'^about_us/$', views.about_us, name='about_us'),
+    # /login
+    url(r'', include('django.contrib.auth.urls')),
+    # /signup
+    url(r'signup/$', views.SignUp.as_view(), name='signup'),
+    # /admin - manage accounts
+    url(r'^admin/', admin.site.urls),
     # /up_vote
     url(r'^up_vote/$', views.up_vote, name='up_vote'),
     # /down_vote

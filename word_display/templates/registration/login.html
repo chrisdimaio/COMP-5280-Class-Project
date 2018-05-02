@@ -1,0 +1,33 @@
+{% extends 'word_display/base.html' %}
+
+<title>Login</title>
+{% block title %}Login{% endblock %}
+{% block content %}
+<center>
+{% if user.is_authenticated %}
+<h2>You are already logged in.</h2>
+<a href="{% url 'logout' %}">Click to Logout</a>
+{% else %}
+<style type="text/css">
+	input[type=text], input[type=password] 
+	{
+	    width: 50%;
+	    height: 40px;
+	    padding: 12px 20px;
+	    border-radius: 4px;
+	    margin: 8px 0;
+	    text-align: left;
+	    box-sizing: border-box;
+	}
+</style>
+
+<h2>Login</h2>
+<form method="post">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <input type="submit" value="Submit" style="width: 150px;">
+</form>
+<a href="{% url 'signup' %}">Create an Account</a>
+{% endif %}
+</center>
+{% endblock %}
