@@ -8,7 +8,7 @@
             </div>
         </div>
         <div class="search_form">
-            <form action="http://127.0.0.1:8000/word_display/dict_search/"  method="post">
+            <form action="dict_search/"  method="post">
                 {% csrf_token %}
                 <input type="text" name="word_value" id="word_value" >
                 <br/>
