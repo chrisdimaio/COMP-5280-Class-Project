@@ -6,6 +6,7 @@ from django.shortcuts import render
 from django.core.exceptions import ObjectDoesNotExist
 
 import requests
+import json
 
 def index(request):
     context = {}
