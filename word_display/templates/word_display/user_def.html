@@ -1,11 +1,28 @@
-<h2> Enter your own definition:</h2>
-<form action="/word_display/add_def/" method="post">
-    {% csrf_token %}
-    <h3> Word: </h3>
-    <input type="text" name="word_value" id="word_value" value="{{ word_value }}">
-    <br/>
-    <br/>
-    <h3> Your definition: </h3>
-    <input type="text" name="user_def" id="user_def">
-    <input type="submit" value="Add Your Definition">
-</form>
+{% load staticfiles %}
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="{% static 'user_def.css' %}"/> 
+    </head>
+    <body>
+        <div class="page_title">
+                <h2> Enter your own definition</h2>
+        </div>
+        <br/>
+        <form action="/word_display/add_def/" method="post">
+            {% csrf_token %}
+            <div class="text_div_1">
+                <h3>   Word: </h3>
+            </div>
+            <input type="text" name="word_value" id="word_value" value="{{ word_value }}"></input>
+            <br/>
+            <br/>
+            <div class="text_div_2">
+                <h3> Your definition: </h3>
+            </div>
+            <textarea rows="10" cols="47" name="user_def" id="user_def"></textarea>
+            <br/>
+            <br/>
+            <input type="submit" name="submit" value="Add Your Definition">
+        </form>
+    </body>
+</html>
