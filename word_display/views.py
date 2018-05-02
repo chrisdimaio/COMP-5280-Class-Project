@@ -5,8 +5,17 @@ from django.shortcuts import render
 # from utilities import dictionary_request, add_def_to_db
 from django.core.exceptions import ObjectDoesNotExist
 
+from django.contrib.auth.forms import UserCreationForm
+from django.urls import reverse_lazy
+from django.views import generic
+
 import requests
 import json
+
+class SignUp(generic.CreateView):
+    form_class = UserCreationForm
+    success_url = reverse_lazy('login')
+    template_name = 'word_display/signup.html'
 
 def index(request):
     context = {}

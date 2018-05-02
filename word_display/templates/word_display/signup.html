@@ -1,0 +1,31 @@
+{% extends 'word_display/base.html' %}
+
+{% block title %}Sign Up{% endblock %}
+
+{% block content %}
+<style type="text/css">
+	input[type=text], input[type=password] 
+	{
+	    width: 50%;
+	    height: 40px;
+	    padding: 12px 20px;
+	    border-radius: 4px;
+	    margin: 8px 0;
+	    text-align: left;
+	    box-sizing: border-box;
+	}
+</style>
+{% if user.is_authenticated %}
+<center>
+<h2>You are already logged in.</h2>
+<a href="{% url 'logout' %}">Click to Logout</a>
+</center>
+{% else %}
+  <h2>Sign up</h2>
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Sign Up" style="width: 150px;">
+  </form>
+{% endif %}
+{% endblock %}
