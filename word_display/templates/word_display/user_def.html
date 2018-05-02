@@ -1,9 +1,6 @@
-{% load staticfiles %}
-<html>
-    <head>
-        <link rel="stylesheet" type="text/css" href="{% static 'user_def.css' %}"/> 
-    </head>
-    <body>
+{% extends 'word_display/base.html' %}
+{% block content %}
+
         <div class="page_title">
                 <h2> Enter your own definition</h2>
         </div>
@@ -24,5 +21,5 @@
             <br/>
             <input type="submit" name="submit" value="Add Your Definition">
         </form>
-    </body>
-</html>
+{% endblock %}
+
