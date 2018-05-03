@@ -27,6 +27,7 @@ def wordDef(request):
 def dict_search(request):
     word_value = request.POST.get('word_value')
     definition = dictionary_request(word_value)
+    print "here", definition
     word_value = word_value.lower()
     try:
         word_entry = word.objects.get(wordEntry=word_value)
@@ -103,8 +104,12 @@ def dictionary_request(word_id):
     url = 'https://od-api.oxforddictionaries.com:443/api/v1/entries/' + language + '/' + word_id.lower()
 
     r = requests.get(url, headers = {'app_id':app_id, 'app_key': app_key})
-    result = json.loads(r.text)
-    retValue =  result['results'][0]['lexicalEntries'][0]['entries'][0]['senses'][0]['definitions'][0]
+
+    if r.status_code == 404:
+        retValue = " WORD NOT FOUND"
+    else:
+        result = json.loads(r.text)
+        retValue =  result['results'][0]['lexicalEntries'][0]['entries'][0]['senses'][0]['definitions'][0]
     return retValue
 
 def add_def_to_db(word_value, u_def):
