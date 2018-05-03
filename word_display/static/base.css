@@ -5,8 +5,26 @@
 }
 
 .page-header h1, .page-header h1 a, .page-header h1 a:visited, .page-header h1 a:active {
-    // color: #ffffff;
+    color: #ffffff;
     font-size: 20pt;
     text-decoration: none;
 }
 
+.up_vote{
+    width:10%;
+    float: left;
+}
+.down_vote{
+    width:10%; 
+    float: left;
+}
+
+.user_def_entry{
+    width: 19%;
+    border: 2px solid blue;
+    padding-bottom: 5px;
+    border-radius: 5px;
+}
+.vote_count{
+    padding-left: 90%;
+}

@@ -6,21 +6,37 @@
 <h3>User's Definitions: </h3>
 
 {% for entry in word_entry.users_def_set.all %}
-    <div>
-        {{ entry.userDef }}
-        <form action="/word_display/up_vote/" method="post">
-            {% csrf_token %}
-            <input type="submit" value="Up Vote">
-            <input type="hidden" value="{{ word_value }}" name="word_value" id="word_value">
-            <input type="hidden" value= "{{ entry.pk }}" name="key" id="key">
-        </form>
-        <form action="/word_display/down_vote/" method="post">
-            {% csrf_token %}
-            <input type="submit" value="Down Vote">
-            <input type="hidden" value="{{ word_value }}" name="word_value" id="word_value">
-            <input type="hidden" value= "{{ entry.pk }}" name="key" id="key">
-        </form>
-        {{ entry.def_votes }}
+    
+    <div class="user_def_div">
+        <div class="user_def_entry">
+            <div class="definition">
+                {{ entry.userDef }}
+            </div>   
+            <div class="vote_count">
+                    {{ entry.def_votes }}
+                </div>
+        </div>
+        <br/>
+        <div>
+            <div class="up_vote">
+            <form action="/word_display/up_vote/" method="post">
+                {% csrf_token %}
+                <input type="submit" name="up_vote_btn" value="Up Vote">
+                <input type="hidden" value="{{ word_value }}" name="word_value" id="word_value">
+                <input type="hidden" value= "{{ entry.pk }}" name="key" id="key">
+            </form>
+            </div>
+            <div class="down_vote">
+            <form action="/word_display/down_vote/" method="post">
+                {% csrf_token %}
+                <input type="submit" name="up_vote_btn" value="Down Vote">
+                <input type="hidden" value="{{ word_value }}" name="word_value" id="word_value">
+                <input type="hidden" value= "{{ entry.pk }}" name="key" id="key">
+            </form>
+            </div>
+        </div>
+        <br/>
+        <br/>
     </div>
 {% endfor %}
 <a href="/word_display/user_def/{{ word_value }}"> Add Your Own Definition!</a>
