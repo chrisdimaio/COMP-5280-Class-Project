@@ -1,29 +1,23 @@
 .home{
   background: url(images/background.jpg) no-repeat center center fixed;
-//  -webkit-background-size: cover;
-//  -moz-background-size: cover;
-//  -o-background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+   -o-background-size: cover;
   background-size: cover;
   height: 99%;
   width: 100%;
 }
 
-.div_content{
-  height: 99%;
-  width: 100%;
-  margin: 0px;
-  // position: relative;
-  // top: 100; left: 0; bottom: 0; right: 0;
-}
+
 .search_form{
-  margin: auto;
-  width: 20%;
+  
 }
 
 .title_text{
   text-align: center;
   font-size: 50px;
   font-style: bold;
+  padding-top: 30px;
 }
 input[type=text] {
   border-radius: 10px;
@@ -33,7 +27,7 @@ input[type=text] {
   min-width: 200px;
 }
 
-input[type=submit] {
+input[name="search_word"] {
   display: block;
   margin: 0 auto;
   background-color: black;
@@ -41,7 +35,7 @@ input[type=submit] {
   border-radius: 30px;
   border-color: white;
   height: 5%;
-  width: 100%;
+  width: 40%;
   font-size: 100%;
   min-width: 200px;
   font-family: Arial, Helvetica, sans-serif;

@@ -27,6 +27,7 @@ def wordDef(request):
 def dict_search(request):
     word_value = request.POST.get('word_value')
     definition = dictionary_request(word_value)
+    word_value = word_value.lower()
     try:
         word_entry = word.objects.get(wordEntry=word_value)
     except ObjectDoesNotExist:
