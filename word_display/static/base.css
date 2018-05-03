@@ -1,0 +1,12 @@
+.page-header {
+    // background-color: #6495ED;
+    margin-top: 0;
+    top: 0px;
+}
+
+.page-header h1, .page-header h1 a, .page-header h1 a:visited, .page-header h1 a:active {
+    // color: #ffffff;
+    font-size: 20pt;
+    text-decoration: none;
+}
+

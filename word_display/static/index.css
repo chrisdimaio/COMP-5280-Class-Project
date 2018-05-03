@@ -1,12 +1,19 @@
-.div_content{
+.home{
   background: url(images/background.jpg) no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
+//  -webkit-background-size: cover;
+//  -moz-background-size: cover;
+//  -o-background-size: cover;
   background-size: cover;
-  margin: auto;
-  position: absolute;
-  top: 100; left: 0; bottom: 0; right: 0;
+  height: 99%;
+  width: 100%;
+}
+
+.div_content{
+  height: 99%;
+  width: 100%;
+  margin: 0px;
+  // position: relative;
+  // top: 100; left: 0; bottom: 0; right: 0;
 }
 .search_form{
   margin: auto;
