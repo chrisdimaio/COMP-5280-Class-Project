@@ -6,6 +6,8 @@ input[name=word_value]{
     display: block;
     margin: 0 auto;
     font-size: 20px;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
 }
 
 textarea[name=user_def]{
@@ -13,11 +15,13 @@ textarea[name=user_def]{
     display: block;
     margin: 0 auto;
     font-size: 15px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
 }
 input[name=submit]{
     display: block;
     margin: 0 auto;
-    background-color: blue;
+    background-color: black;
     color: white;
     border-radius: 30px;
     border-color: white;
@@ -30,7 +34,7 @@ input[name=submit]{
 
 input[type=submit]:hover{
     background-color: white;
-    color: blue;
+    color: black;
   }
 form{
     width: 50%;
@@ -39,10 +43,10 @@ form{
 }
 
 .text_div_1{
-    background-color: blue;
+    background-color: black;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
-    width: 345px;
+    width: 350px;
     height: 25px;
     padding-left: 5px;
     display: block;
@@ -51,10 +55,10 @@ form{
 }
 
 .text_div_2{
-    background-color: blue;
+    background-color: black;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
-    width: 345px;
+    width: 350px;
     height: 25px;
     padding-left: 5px;
     display: block;
@@ -67,10 +71,11 @@ form{
     display: block;
     margin: 0 auto;
     text-align: center;
-    background-color: blue;
+    background-color: black;
     border-radius: 10px;
     color: white;
 }
 h3{
     padding-top: 0px;
 }
+

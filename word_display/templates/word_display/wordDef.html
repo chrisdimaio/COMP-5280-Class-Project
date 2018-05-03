@@ -1,13 +1,29 @@
 {% extends 'word_display/base.html' %}
 
 {% block content %}
-<h1>The word: {{ word_value }}</h1>
-<h3>Dictionary Definition : {{definition}}</h3>
-<h3>User's Definitions: </h3>
+<div class="word_title">
+    <h1>{{ word_value }}</h1>
+</div>
+<br/>
+<br/>
+
+<div class="dict_def">
+    <div class="dict_def_title">
+        Dictionary Definition
+    </div>
+    <div class="dict_def_entry">
+        {{definition}}
+    </div>
+</div>
+<br/>
+<br/>
 
 {% for entry in word_entry.users_def_set.all %}
     
     <div class="user_def_div">
+        <div class="u_def_title">
+            User Definition
+        </div>
         <div class="user_def_entry">
             <div class="definition">
                 {{ entry.userDef }}
@@ -17,28 +33,30 @@
                 </div>
         </div>
         <br/>
-        <div>
-            <div class="up_vote">
+        <div class="up_vote">
             <form action="/word_display/up_vote/" method="post">
                 {% csrf_token %}
                 <input type="submit" name="up_vote_btn" value="Up Vote">
                 <input type="hidden" value="{{ word_value }}" name="word_value" id="word_value">
                 <input type="hidden" value= "{{ entry.pk }}" name="key" id="key">
             </form>
-            </div>
+        </div>
             <div class="down_vote">
-            <form action="/word_display/down_vote/" method="post">
-                {% csrf_token %}
-                <input type="submit" name="up_vote_btn" value="Down Vote">
-                <input type="hidden" value="{{ word_value }}" name="word_value" id="word_value">
-                <input type="hidden" value= "{{ entry.pk }}" name="key" id="key">
-            </form>
-            </div>
+                <form action="/word_display/down_vote/" method="post">
+                    {% csrf_token %}
+                    <input type="submit" name="up_vote_btn" value="Down Vote">
+                    <input type="hidden" value="{{ word_value }}" name="word_value" id="word_value">
+                    <input type="hidden" value= "{{ entry.pk }}" name="key" id="key">
+                </form>
         </div>
         <br/>
         <br/>
     </div>
 {% endfor %}
-<a href="/word_display/user_def/{{ word_value }}"> Add Your Own Definition!</a>
+
+<div class="ref_div">
+    <a href="/word_display/user_def/{{ word_value }}" style="text-decoration: none"> Add Your Own Definition!</a>
+</div>
+
 
 {% endblock %}

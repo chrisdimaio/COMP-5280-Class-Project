@@ -1,5 +1,4 @@
 .page-header {
-    // background-color: #6495ED;
     margin-top: 0;
     margin-right: 20px;
     top: 0px;
@@ -13,20 +12,64 @@
 }
 
 .up_vote{
-    width:10%;
+    width:15%;
     float: left;
 }
 .down_vote{
-    width:10%; 
+    width:15%; 
     float: left;
 }
 
 .user_def_entry{
-    width: 19%;
-    border: 2px solid blue;
+    width: 25%;
+    border: 2px solid black;
     padding-bottom: 5px;
-    border-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
 }
 .vote_count{
     padding-left: 90%;
+}
+.u_def_title{
+    width: 25%;
+    background-color: black;
+    color: white;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.dict_def_title{
+    width: 25%;
+    background-color: black;
+    color: white;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px; 
+}
+
+.dict_def_entry{
+    width: 25%;
+    border: 2px solid black;
+    padding-bottom: 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.word_title{
+    width: 25%;
+    background-color: black;
+    color: white;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.ref_div{
+    width: 25%;
+    background-color: black;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 30px;
+}
+
+#up_vote .input[type="up_vote_btn"]{
+    background-color: blue;
 }
