@@ -1,12 +1,9 @@
-body{
-  background: url(images/background.jpg) no-repeat center center fixed; 
+.div_content{
+  background: url(images/background.jpg) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-}
-
-.div_content{
   margin: auto;
   position: absolute;
   top: 100; left: 0; bottom: 0; right: 0;
