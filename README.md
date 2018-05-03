@@ -1,9 +1,13 @@
 # COMP-5280-Class-Project
 
-## Instructions
+## How to run the server (Ubuntu/Debian)
+### Install Python venv
+* sudo apt install python3-venv
+### Setup the virtual environment
 * python3 -m venv venv
 * source venv/bin/activate
 * pip install -r requirements.txt
+### Setup & run the server
 * python manage.py makemigrations
 * python manage.py migrate
-* /home/chris/workspace/COMP-5280-Class-Project/:/home/chris/workspace/COMP-5280-Class-Project/tutorial:/home/chris/workspace/COMP-5280-Class-Project/word_display
+* python manage.py runserver
